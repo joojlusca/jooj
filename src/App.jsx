@@ -689,7 +689,7 @@ export default function App() {
               <div className="flex-1 bg-[#09090E] min-h-[600px] flex flex-col relative overflow-hidden border-l border-white/5">
                 {activeProject === 'barberflow' && (
                   <iframe 
-                    src="/pdf/barberflow.pdf#toolbar=0&navpanes=0" 
+                    src="pdf/barberflow.pdf#toolbar=0&navpanes=0" 
                     className="w-full h-full min-h-[600px] border-0"
                     title="BarberFlow Real Composition"
                   />
@@ -721,7 +721,7 @@ export default function App() {
                       </button>
                     </div>
                     <iframe 
-                      src={`/pdf/${cosaNostraView === 'home' ? 'cosanostra.pdf' : 'cosanostra-vendas.pdf'}#toolbar=0&navpanes=0`} 
+                      src={`pdf/${cosaNostraView === 'home' ? 'cosanostra.pdf' : 'cosanostra-vendas.pdf'}#toolbar=0&navpanes=0`} 
                       className="w-full flex-1 min-h-[550px] border-0"
                       title="Cosa Nostra Real Composition"
                     />
@@ -730,7 +730,7 @@ export default function App() {
 
                 {activeProject === 'mlestetica' && (
                   <iframe 
-                    src="/pdf/mlestetica.pdf#toolbar=0&navpanes=0" 
+                    src="pdf/mlestetica.pdf#toolbar=0&navpanes=0" 
                     className="w-full h-full min-h-[600px] border-0"
                     title="ML Estética Real Composition"
                   />
