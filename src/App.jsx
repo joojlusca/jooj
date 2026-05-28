@@ -688,17 +688,20 @@ export default function App() {
               {/* NÚCLEO INTERATIVO (O WIDGET QUE EXIBE O LAYOUT REAL DO PROJETO EM PDF) */}
               <div className="flex-1 bg-[#09090E] min-h-[600px] flex flex-col relative overflow-hidden border-l border-white/5">
                 {activeProject === 'barberflow' && (
-                  <iframe 
-                    src="pdf/barberflow.pdf#toolbar=0&navpanes=0" 
-                    className="w-full h-full min-h-[600px] border-0"
-                    title="BarberFlow Real Composition"
-                  />
+                  <div className="relative w-full h-full min-h-[600px]">
+                    <iframe 
+                      src="pdf/barberflow.pdf#toolbar=0&navpanes=0" 
+                      className="w-full h-full min-h-[600px] border-0"
+                      title="BarberFlow Real Composition"
+                    />
+                    <div className="absolute inset-0 z-30 bg-transparent pointer-events-auto" />
+                  </div>
                 )}
 
                 {activeProject === 'cosanostra' && (
-                  <div className="w-full h-full flex flex-col flex-1">
+                  <div className="w-full h-full flex flex-col flex-1 relative">
                     {/* Abas Internas da Cosa Nostra */}
-                    <div className="bg-[#0A0A0E] px-4 py-2 border-b border-marfim/5 flex gap-2">
+                    <div className="bg-[#0A0A0E] px-4 py-2 border-b border-marfim/5 flex gap-2 relative z-40">
                       <button 
                         onClick={() => setCosaNostraView('home')}
                         className={`px-3 py-1.5 rounded-lg text-[9px] font-mono font-bold transition-all ${
@@ -720,20 +723,26 @@ export default function App() {
                         CATÁLOGO DE VENDAS
                       </button>
                     </div>
-                    <iframe 
-                      src={`pdf/${cosaNostraView === 'home' ? 'cosanostra.pdf' : 'cosanostra-vendas.pdf'}#toolbar=0&navpanes=0`} 
-                      className="w-full flex-1 min-h-[550px] border-0"
-                      title="Cosa Nostra Real Composition"
-                    />
+                    <div className="relative flex-1 min-h-[550px]">
+                      <iframe 
+                        src={`pdf/${cosaNostraView === 'home' ? 'cosanostra.pdf' : 'cosanostra-vendas.pdf'}#toolbar=0&navpanes=0`} 
+                        className="w-full h-full min-h-[550px] border-0"
+                        title="Cosa Nostra Real Composition"
+                      />
+                      <div className="absolute inset-0 z-30 bg-transparent pointer-events-auto" />
+                    </div>
                   </div>
                 )}
 
                 {activeProject === 'mlestetica' && (
-                  <iframe 
-                    src="pdf/mlestetica.pdf#toolbar=0&navpanes=0" 
-                    className="w-full h-full min-h-[600px] border-0"
-                    title="ML Estética Real Composition"
-                  />
+                  <div className="relative w-full h-full min-h-[600px]">
+                    <iframe 
+                      src="pdf/mlestetica.pdf#toolbar=0&navpanes=0" 
+                      className="w-full h-full min-h-[600px] border-0"
+                      title="ML Estética Real Composition"
+                    />
+                    <div className="absolute inset-0 z-30 bg-transparent pointer-events-auto" />
+                  </div>
                 )}
               </div>
 
